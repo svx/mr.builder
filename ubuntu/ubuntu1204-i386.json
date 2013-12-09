@@ -19,7 +19,7 @@
         "iso_checksum": "e7917ff0543d8248d00ffb166def849e",
         "iso_checksum_type": "md5",
 
-        "http_directory" : "ubuntu_64",
+        "http_directory" : "http",
         "http_port_min" : 9001,
         "http_port_max" : 9001,
 
