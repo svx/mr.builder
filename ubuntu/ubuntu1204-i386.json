@@ -11,7 +11,12 @@
             "scripts/base.sh",
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
-        ]
+        ],
+    "override": {
+        "virtualbox": {
+            "execute_command": "echo 'password' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+            }
+        }
     }],
 
     "builders": [{
