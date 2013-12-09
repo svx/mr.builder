@@ -16,7 +16,7 @@
 
         "disk_size" : 10000,
 
-        "iso_url": "/home/svx/Iso/ubuntu-12.04.3-server-i386.iso",
+        "iso_url": "http://iso.buildmaster/ubuntu-12.04.3-server-i386.iso",
         "iso_checksum": "e7917ff0543d8248d00ffb166def849e",
         "iso_checksum_type": "md5",
 
