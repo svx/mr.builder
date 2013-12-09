@@ -11,14 +11,8 @@
             "scripts/base.sh",
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
-        ],
-
-    "override": {
-        "virtualbox": {
-            "execute_command": "echo 'svx'| sudo -$ sh '{{.PATH}}'"
-            }
-        }
-    }]
+        ]
+    }],
 
     "builders": [{
         "type": "virtualbox",
