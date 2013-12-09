@@ -21,7 +21,7 @@
       "disk_size": 10140,
       "guest_os_type": "Debian",
       "headless": true,
-      "http_directory": "debian_32",
+      "http_directory": "http",
       "iso_checksum": "564282a81b5aef7015501e497fc63d81",
       "iso_checksum_type": "md5",
       "iso_url": "http://cdimage.debian.org/debian-cd/7.2.0/i386/iso-cd/debian-7.2.0-i386-netinst.iso",
