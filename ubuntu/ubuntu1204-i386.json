@@ -10,20 +10,19 @@
         "guest_os_type": "Ubuntu",
 
         "vboxmanage": [
-            ["modifyvm", "{{.Name}}", "--memory", "512"]
+            ["modifyvm", "{{.Name}}", "--memory", "512"],
             ["modifyvm", "{{.Name}}", "--cpus", "1"]
         ],
 
         "disk_size" : 10000,
 
-        "iso_url": "http://releases.ubuntu.com/precise/ubuntu-12.04.3-server-i386.iso",
+        "iso_url": "/home/svx/Iso/ubuntu-12.04.3-server-i386.iso",
         "iso_checksum": "e7917ff0543d8248d00ffb166def849e",
         "iso_checksum_type": "md5",
 
         "http_directory" : "http",
         "http_port_min" : 9001,
         "http_port_max" : 9001,
-
         "ssh_username": "{{user `ssh_name`}}",
         "ssh_password": "{{user `ssh_pass`}}",
         "ssh_wait_timeout": "20m",
