@@ -10,7 +10,8 @@
         "guest_os_type": "Ubuntu",
 
         "vboxmanage": [
-            ["modifyvm", "{{.Name}}", "--vram", "32"]
+            ["modifyvm", "{{.Name}}", "--memory", "512"]
+            ["modifyvm", "{{.Name}}", "--cpus", "1"]
         ],
 
         "disk_size" : 10000,
