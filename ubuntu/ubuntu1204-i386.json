@@ -1,7 +1,7 @@
 {
     "variables": {
         "ssh_name": "sven",
-        "ssh_pass": "sven",
+        "ssh_pass": "password",
         "hostname": "packer-test"
     },
 
