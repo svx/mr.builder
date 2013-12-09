@@ -2,7 +2,7 @@
     "variables": {
         "ssh_name": "svx",
         "ssh_pass": "svx",
-        "hostname": "packer2"
+        "hostname": "u1204-64"
     },
 
     "builders": [{

@@ -1,8 +1,8 @@
 {
     "variables": {
-        "ssh_name": "sven",
+        "ssh_name": "svx",
         "ssh_pass": "password",
-        "hostname": "packer-test"
+        "hostname": "u1204-32"
     },
 
     "builders": [{
