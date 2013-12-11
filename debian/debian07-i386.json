@@ -1,6 +1,36 @@
 {
-  "builders": [
-    {
+    "variables": {
+        "ssh_name": "svx",
+        "ssh_pass": "password",
+        "hostname": "debian7-32"
+    },
+
+
+    "builders": [{
+        "vm_name": "debian7-32"
+        "type": "virtualbox",
+        "guest_os_type": "Debian",
+
+        "vboxmanage": [
+            ["modifyvm", "{{.Name}}", "--memory", "256"],
+            ["modifyvm", "{{.Name}}", "--cpus", "1"]
+        ],
+
+        "disk_size" : 10000,
+
+        "iso_url": "http://iso.buildmaster/debian-7.2.0-i386-netinst.iso",
+        "iso_checksum": "564282a81b5aef7015501e497fc63d81",
+        "iso_checksum_type": "md5",
+
+        "http_directory": "http",
+        "http_port_min" : 9001,
+        "http_port_max" : 9001,
+        "ssh_username": "{{user `ssh_name`}}",
+        "ssh_password": "{{user `ssh_pass`}}",
+        "ssh_wait_timeout": "20m",
+
+        "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -hP now",
+
       "boot_command": [
         "<esc><wait>",
         "install <wait>",
@@ -17,23 +47,6 @@
         "console-keymaps-at/keymap=us <wait>",
         "keyboard-configuration/xkb-keymap=us <wait>",
         "<enter><wait>"
-      ],
-      "disk_size": 10140,
-      "guest_os_type": "Debian",
-      "headless": true,
-      "http_directory": "http",
-      "iso_checksum": "564282a81b5aef7015501e497fc63d81",
-      "iso_checksum_type": "md5",
-      "iso_url": "http://iso.buildmaster/debian-7.2.0-i386-netinst.iso",
-      "shutdown_command": "echo 'halt -p' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
-      "ssh_password": "password",
-      "ssh_port": 22,
-      "ssh_username": "svx",
-      "ssh_wait_timeout": "10000s",
-      "type": "virtualbox",
-      "vboxmanage": [
-            ["modifyvm", "{{.Name}}", "--memory", "256"],
-            ["modifyvm", "{{.Name}}", "--cpus", "1"]
       ]
     }]
 }
