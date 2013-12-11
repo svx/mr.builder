@@ -7,6 +7,7 @@
 
 
     "builders": [{
+        "vm_name": "debian7-32"
         "type": "virtualbox",
         "guest_os_type": "Debian",
 
@@ -28,7 +29,7 @@
         "ssh_password": "{{user `ssh_pass`}}",
         "ssh_wait_timeout": "20m",
 
-        "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -P now",
+        "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -hP now",
 
       "boot_command": [
         "<esc><wait>",
