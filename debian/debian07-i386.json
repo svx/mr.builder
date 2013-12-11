@@ -24,7 +24,7 @@
       "http_directory": "http",
       "iso_checksum": "564282a81b5aef7015501e497fc63d81",
       "iso_checksum_type": "md5",
-      "iso_url": "http://cdimage.debian.org/debian-cd/7.2.0/i386/iso-cd/debian-7.2.0-i386-netinst.iso",
+      "iso_url": "http://iso.buildmaster/debian-cd/7.2.0/i386/iso-cd/debian-7.2.0-i386-netinst.iso",
       "shutdown_command": "echo 'halt -p' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
       "ssh_password": "password",
       "ssh_port": 22,
