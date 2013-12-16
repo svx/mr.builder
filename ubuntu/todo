@@ -9,3 +9,8 @@ use something like:
 blkid /dev/sda1 | awk '{print $2;}' | sed 's/"//g'
 
 to get uuid
+
+make it faster:
+UUID=8f1288bd-791d-4d44-a2ff-0a40887e8e29 / ext4 errors=remount-ro,noatime,nodiratime,data=writeback,barrier=0,nobh,commit=100,nouser_xattr 0 1
+
+9taken fom here: http://www.thedeveloperday.com/optimizing-mysql-on-ubuntu-10-10-maverick/ and polyester
