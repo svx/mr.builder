@@ -1,0 +1,11 @@
+tweak fs:
+
+tune2fs /dev/sda1 -O has_journal -o journal_data_writeback
+
+This will disable journaling on the ext4 filesystem. Yes, a recovery after an unclean shutdown will take a bit longer. But hey, this is no mission-critical system we're building.
+
+---
+use something like:
+blkid /dev/sda1 | awk '{print $2;}' | sed 's/"//g'
+
+to get uuid
