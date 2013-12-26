@@ -27,3 +27,8 @@ sed -i "s/"$MYUUID"/#"$MYUUID"/g" file
 sed -i '/#UUID=8f1288bd-791d-4d44-a2ff-0a40887e8e29/a '$MYUUID' / ext4 errors=remount-ro,noatime,nodiratime,data=writeback,barrier=0,nobh,commit=100,nouser_xattr 0 1' file
 echo $MYUUID / ext4 errors=remount-ro,noatime,nodiratime,data=writeback,barrier=0,nobh,commit=100,nouser_xattr 0 1 >> file
 
+---
+
+clean logs
+find /var/log -type f -exec /bin/cp /dev/null {} \;
+ something like this
