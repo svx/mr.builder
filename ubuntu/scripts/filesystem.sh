@@ -1,9 +1,13 @@
 #!/bin/sh
 # This script will change some filesystem setting, do not use it in production !
 
-# Disable journaling
+# Enable writeback for better performance
 tune2fs /dev/sda1 -O has_journal -o journal_data_writeback
+# Disable journaling
+#tune2fs -O ^has_journal /dev/sda1
 
+# Do fs.check
+#e2fsck -f /dev/sda1
 
 MYUUID=$(blkid /dev/sda1 | awk '{print $2;}' | sed 's/"//g')
 
