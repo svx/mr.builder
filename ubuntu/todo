@@ -32,3 +32,8 @@ echo $MYUUID / ext4 errors=remount-ro,noatime,nodiratime,data=writeback,barrier=
 clean logs
 find /var/log -type f -exec /bin/cp /dev/null {} \;
  something like this
+
+ --- 
+ clear history
+ history -w
+ history -c
