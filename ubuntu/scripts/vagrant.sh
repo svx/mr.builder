@@ -4,6 +4,9 @@ VAGRANT_USER=vagrant
 VAGRANT_HOME=/home/$VAGRANT_USER
 VAGRANT_KEY_URL=https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub
 
+# Install extra packages
+apt-get install dkms
+
 # Create Vagrant user (if not already present)
 if ! id -u $VAGRANT_USER >/dev/null 2>&1; then
     /usr/sbin/groupadd $VAGRANT_USER
