@@ -1,7 +1,7 @@
 {
     "variables": {
-        "ssh_name": "svx",
-        "ssh_pass": "password",
+        "ssh_name": "vagrant",
+        "ssh_pass": "vagrant",
         "hostname": "u1204-32"
     },
 
@@ -11,7 +11,8 @@
             "scripts/base.sh",
             "scripts/filesystem.sh",
             "scripts/cleanup.sh",
-            "scripts/zerodisk.sh"
+            "scripts/zerodisk.sh",
+            "scripts/vagrant.sh"
         ],
     "override": {
         "virtualbox-iso": {
@@ -55,6 +56,10 @@
             "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
             "initrd=/install/initrd.gz -- <enter>"
         ]
+    }],
+    "post-processors": [{
+        "type": "vagrant",
+        "compression_level": 1
     }]
 }
 
