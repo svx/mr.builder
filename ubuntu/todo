@@ -37,3 +37,6 @@ find /var/log -type f -exec /bin/cp /dev/null {} \;
  clear history
  history -w
  history -c
+
+ ---
+ set vagrant provider comp level to 9 ?
