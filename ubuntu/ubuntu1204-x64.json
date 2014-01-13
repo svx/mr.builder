@@ -10,7 +10,7 @@
         "guest_os_type": "Ubuntu_64",
 
         "vboxmanage": [
-            ["modifyvm", "{{.Name}}", "--memory", "512"]
+            ["modifyvm", "{{.Name}}", "--memory", "512"],
             ["modifyvm", "{{.Name}}", "--cpus", "1"]
         ],
 
