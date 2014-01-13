@@ -16,7 +16,7 @@
         ],
     "override": {
         "virtualbox-iso": {
-            "execute_command": "echo 'password' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+            "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
             }
         }
     }],
@@ -48,7 +48,7 @@
         "boot_command" : [
             "<esc><esc><enter><wait>",
             "/install/vmlinuz noapic ",
-            "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+            "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-vagrant.cfg ",
             "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
             "hostname={{user `hostname`}} ",
             "fb=false debconf/frontend=noninteractive ",
