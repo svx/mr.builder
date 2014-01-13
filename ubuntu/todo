@@ -40,3 +40,10 @@ find /var/log -type f -exec /bin/cp /dev/null {} \;
 
  ---
  set vagrant provider comp level to 9 ?
+
+ install vboxguest additions:
+ Failed to mount folders in Linux guest. This is usually beacuse
+ the "vboxsf" file system is not available. Please verify that
+ the guest additions are properly installed in the guest and
+ can work properly. The command attempted was:
+
