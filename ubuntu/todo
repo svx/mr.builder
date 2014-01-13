@@ -47,3 +47,6 @@ find /var/log -type f -exec /bin/cp /dev/null {} \;
  the guest additions are properly installed in the guest and
  can work properly. The command attempted was:
 
+--- 
+this is done:
+vagrant plugin install vagrant-vbguest
