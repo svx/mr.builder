@@ -21,6 +21,7 @@
     }],
 
     "builders": [{
+        "vm_name": "u1204-32",
         "type": "virtualbox-iso",
         "guest_os_type": "Ubuntu",
 
