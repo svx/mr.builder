@@ -33,7 +33,7 @@
 
         "disk_size" : 10000,
 
-        "iso_url": "http://iso.buildmaster/debian-7.2.0-i386-netinst.iso",
+        "iso_url": "/home/svx/ISO/debian-7.2.0-i386-netinst.iso",
         "iso_checksum": "564282a81b5aef7015501e497fc63d81",
         "iso_checksum_type": "md5",
 
