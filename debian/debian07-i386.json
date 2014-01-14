@@ -22,7 +22,7 @@
     }],
 
     "builders": [{
-        "vm_name": "debian7-32"
+        "vm_name": "debian7-32",
         "type": "virtualbox-iso",
         "guest_os_type": "Debian",
 
