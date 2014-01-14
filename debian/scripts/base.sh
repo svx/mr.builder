@@ -5,7 +5,7 @@ apt-get -y install zlib1g-dev libssl-dev libreadline-gplv2-dev
 apt-get -y install curl unzip
 
 # Set up sudo
-echo 'svx ALL=NOPASSWD:ALL' > /etc/sudoers.d/svx
+#echo 'svx ALL=NOPASSWD:ALL' > /etc/sudoers.d/svx
 
 # Tweak sshd to prevent DNS resolution (speed up logins)
 echo 'UseDNS no' >> /etc/ssh/sshd_config
