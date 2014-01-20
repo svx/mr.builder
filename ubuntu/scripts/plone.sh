@@ -28,3 +28,6 @@ directory=/usr/local/Plone/zeocluster
 command=/usr/local/Plone/zeocluster/bin/client1 console
 stopwaitseconds=30
 EOF
+
+# Todo
+# cleanup installer files in /home dir
