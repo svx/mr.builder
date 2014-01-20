@@ -1,6 +1,6 @@
 {
     "variables": {
-        "ssh_name": "svx",
+        "ssh_name": "plone",
         "ssh_pass": "password",
         "hostname": "ploneserver"
     },
@@ -49,7 +49,7 @@
         "boot_command" : [
             "<esc><esc><enter><wait>",
             "/install/vmlinuz noapic ",
-            "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+            "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-plone.cfg ",
             "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
             "hostname={{user `hostname`}} ",
             "fb=false debconf/frontend=noninteractive ",
