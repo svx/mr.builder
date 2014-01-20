@@ -1,7 +1,7 @@
 # Install Plone Dependencies
 
 echo "Installing needed packages for plone"
-apt-get install build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev \
+apt-get install -y build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev \
     zlib1g-dev python-setuptools python-dev libjpeg62-dev \
     libreadline-gplv2-dev python-imaging wv poppler-utils
 
