@@ -1,3 +1,4 @@
+echo "Cleaning with APT"
 apt-get -y autoremove
 apt-get -y clean
 
