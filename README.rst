@@ -1,7 +1,7 @@
 Mr.Builder
 ==========
 
-a tool to ceate virtual machines, based on Packer and VirtualBox
+a tool to create virtual machines and vargrant boxes, based on Packer and VirtualBox
 
 Install
 -------
