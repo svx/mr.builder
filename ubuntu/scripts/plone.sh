@@ -31,3 +31,4 @@ EOF
 
 # Todo
 # cleanup installer files in /home dir
+# make plone download as $VAR
