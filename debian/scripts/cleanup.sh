@@ -30,3 +30,6 @@ rm -rf /tmp/*
 echo "cleaning logs"
 find /var/log -type f -exec /bin/cp /dev/null {} \;
 
+# Todo
+# check: http://debianforum.de/forum/viewtopic.php?f=12&t=143452,
+# 70-persistent-net.rules was not there last time, need to check again
