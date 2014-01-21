@@ -1,6 +1,8 @@
 #!/bin/sh
 # This script will change some filesystem setting, do not use it in production !
 
+echo "Tweaking filesystem...hold on .. "
+
 # Enable writeback for better performance
 tune2fs /dev/sda1 -O has_journal -o journal_data_writeback
 
