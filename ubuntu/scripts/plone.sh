@@ -1,12 +1,16 @@
 # Install Plone Dependencies
 
+PlONE_DOWNLOAD=https://launchpad.net/plone/4.3/4.3.2/+download/Plone-4.3.2-UnifiedInstaller.tgz
+
+
 echo "Installing needed packages for plone"
 apt-get install -y build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev \
     zlib1g-dev python-setuptools python-dev libjpeg62-dev \
     libreadline-gplv2-dev python-imaging wv poppler-utils supervisor
 
 echo "Downloading Plone"
-wget https://launchpad.net/plone/4.3/4.3.2/+download/Plone-4.3.2-UnifiedInstaller.tgz
+#wget https://launchpad.net/plone/4.3/4.3.2/+download/Plone-4.3.2-UnifiedInstaller.tgz
+wget $PlONE_DOWNLOAD
 
 echo "Extracting download"
 tar xf Plone-4.3.2-UnifiedInstaller.tgz
@@ -29,6 +33,7 @@ command=/usr/local/Plone/zeocluster/bin/client1 console
 stopwaitseconds=30
 EOF
 
+rm Plone-4.3.2-UnifiedInstaller.tgz
+
 # Todo
 # cleanup installer files in /home dir
-# make plone download as $VAR
