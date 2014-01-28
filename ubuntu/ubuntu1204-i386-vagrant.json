@@ -2,7 +2,7 @@
     "variables": {
         "ssh_name": "vagrant",
         "ssh_pass": "vagrant",
-        "hostname": "u1204-32"
+        "hostname": "mrsjenkins"
     },
 
     "provisioners": [{
