@@ -24,6 +24,7 @@
     "builders": [{
         "type": "virtualbox-iso",
         "guest_os_type": "Ubuntu_64",
+        "vm_name": "jenkinsclient",
 
         "vboxmanage": [
             ["modifyvm", "{{.Name}}", "--memory", "512"],
