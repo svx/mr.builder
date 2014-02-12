@@ -25,6 +25,7 @@
         "type": "virtualbox-iso",
         "guest_os_type": "Ubuntu_64",
         "vm_name": "jenkinsclient",
+        "output_directory": "/home/svx/Image/Plone-ISO",
 
         "vboxmanage": [
             ["modifyvm", "{{.Name}}", "--memory", "512"],
