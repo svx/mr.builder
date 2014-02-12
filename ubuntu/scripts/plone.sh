@@ -33,7 +33,7 @@ command=/usr/local/Plone/zeocluster/bin/client1 console
 stopwaitseconds=30
 EOF
 
-rm Plone-4.3.2-UnifiedInstaller.tgz
+#rm Plone-4.3.2-UnifiedInstaller.tgz
 
 # Todo
 # cleanup installer files in /home dir
