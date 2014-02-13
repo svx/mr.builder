@@ -24,7 +24,7 @@
 
     "builders": [{
         "type": "virtualbox-iso",
-        "guest_os_type": "Ubuntu",
+        "guest_os_type": "Ubuntu_64",
         "vm_name": "ploneserver",
         "output_directory": "/home/svx/Image/Vargrant",
 
@@ -64,7 +64,9 @@
     }],
     "post-processors": [{
         "type": "vagrant",
-        "compression_level": 1
+        "keep_input_artifact": true,
+        "compression_level": 1,
+        "output": "/home/svx/Image/ploneserver.box"
     }]
 }
 
