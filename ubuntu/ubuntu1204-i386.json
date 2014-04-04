@@ -32,8 +32,8 @@
 
         "disk_size" : 10000,
 
-        "iso_url": "/home/svx/ISO/ubuntu-12.04.3-server-i386.iso",
-        "iso_checksum": "e7917ff0543d8248d00ffb166def849e",
+        "iso_url": "/home/svx/ISO/ubuntu-12.04.4-server-i386.iso",
+        "iso_checksum": "0081e57fb8c7e4094fb9767384f087c6",
         "iso_checksum_type": "md5",
 
         "http_directory" : "http",
