@@ -1,0 +1,11 @@
+---
+
+# Variables for intranet.milieudefensie.nl
+# User Vars
+user_name: zopeuser
+site_name: yada.milieudefensie.nl
+
+# Server Vars
+server_mail_sven: svens@milieudefensie.nl
+server_mail_helpdesk: helpdesk@milieudefensie.nl
+root_mail_forward: svens@milieudefensie.nl

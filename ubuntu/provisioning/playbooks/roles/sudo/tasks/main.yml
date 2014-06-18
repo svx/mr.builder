@@ -1,0 +1,6 @@
+---
+# This role will add the user to sudo to give root permissions
+
+- name: Add deploy user to sudoers
+  action: lineinfile dest=/etc/sudoers regexp="{{ user_name }} ALL" line="{{ user_name }} ALL=(ALL) ALL" state=present
+

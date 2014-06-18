@@ -1,0 +1,13 @@
+---
+# This role will remove and purge sendmail
+
+- name: Uninstalling sendmail 
+  apt: name={{item}} state=absent purge=yes
+  with_items:
+    - sendmail
+    - sendmail-bin
+    - procmail
+    - sendmail-base
+    - sendmail-cf
+    - m4
+

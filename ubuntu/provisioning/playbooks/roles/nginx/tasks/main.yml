@@ -1,0 +1,14 @@
+---
+# This role will install, configure and restart nxinx
+
+- name: Install Nginx
+  apt: name={{item}} state=present
+  with_items:
+    - nginx
+
+- name: Upload global.conf
+  action: copy src=../files/global.conf dest=/etc/nginx/golbal.conf
+
+- name: Upload nginx.conf
+  action: copy src=../files/nginx.conf dest=/etc/nginx/nginx.conf
+  notify: restart nginx

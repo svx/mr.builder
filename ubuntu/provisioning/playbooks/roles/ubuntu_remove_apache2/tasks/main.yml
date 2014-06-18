@@ -1,0 +1,12 @@
+---
+# This role will remove apache2
+
+- name: Uninstall apache2
+  apt: name={{item}} state=absent purge=yes
+  with_items:
+    - apache2
+    - apache2-doc
+    - apache2-mpm-prefork
+    - apache2.2-bin
+    - apache2.2-common
+

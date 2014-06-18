@@ -1,0 +1,35 @@
+---
+# Test Playbook
+
+### signal the start of configuration
+- hosts: localhost
+  tasks:
+    - irc:
+        channel="#milieudefensie" server="chat.freenode.net" msg="Prepare test.intranet.milieudefensie"
+
+- hosts: test.intranet.vmd
+  remote_user: sven
+  sudo: yes
+  vars_files:
+    - ../host_vars/test.intranet.vmd.yml
+  roles:
+    - apt-update
+    - ubuntu_remove_apache2
+    - ubuntu_remove_sendmail
+    - ubuntu_base_packages
+    - apt-upgrade
+    - ubuntu1204_plone_packages
+    - motd
+    - postfix
+    - create_user
+    - bitcron
+    - zps
+
+  handlers:
+    - include: ../handlers/handlers.yml
+
+
+- hosts: localhost
+  tasks:
+    - irc:
+        channel="#milieudefensie" server="chat.freenode.net" msg="test.intranet.milieudefensie is up and running"

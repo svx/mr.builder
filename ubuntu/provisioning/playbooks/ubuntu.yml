@@ -1,0 +1,12 @@
+---
+# Ubuntu Playbook
+
+- hosts: ubuntu1204
+  remote_user: test
+  sudo: yes
+
+  roles:
+   - apt-update
+#   - ubuntu_packages
+#   - download_plone_installer
+#   - run_installer

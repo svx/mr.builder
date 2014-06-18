@@ -1,0 +1,21 @@
+---
+# This role will install, configure and restart postfix
+
+- name: Install postfix
+  apt: name={{item}} state=present
+  with_items:
+      - postfix
+
+- name: Upload postfix config
+  template: src=main.cf.j2 dest=/etc/postfix/main.cf
+
+- name: Update /etc/aliases
+  lineinfile: 'dest=/etc/aliases regexp="^root:\s+{{ root_mail_forward }}" "line=root: {{ root_mail_forward }}"'
+
+- name: Create mailname
+  template: src=mailname.j2 dest=/etc/mailname mode=0644
+
+- name: Reload aliases
+  command: newaliases
+  notify: restart postfix
+

@@ -1,0 +1,11 @@
+---
+# This role will install zps
+
+- name: Download ZPS
+  command: wget http://apt.leftxs.org/stable/python-rt.zps_0.9.4-1_all.deb
+
+- name: Install extra packages we need
+  apt: name=python-psutil state=present
+
+- name: Install ZPS
+  command: dpkg -i python-rt.zps_0.9.4-1_all.deb

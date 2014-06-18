@@ -1,0 +1,24 @@
+---
+# This role will setup a user
+
+    - name: Create User
+      user: name={{ user_name }} shell=/bin/bash generate_ssh_key=yes ssh_key_bits=2048
+
+    - name: create ssh dir for User
+      file: state=directory path=/home/{{ user_name }}/.ssh/ mode=700
+
+    - name: Setup | authorized key upload
+      authorized_key: user={{ user_name }} key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+    - name: Get dotfiles
+      git: repo=https://github.com/milieudefensie/dotfiles.deploy.git dest=/home/{{ user_name }}/.dotfiles
+      sudo_user: "{{ user_name }}"
+
+    - name: all in place
+      #sudo: no
+      sudo_user: "{{ user_name }}"
+      command: chmod +x /home/{{ user_name }}/.dotfiles/makesymlinks.sh
+
+    - name: creating symlinks
+      sudo_user: "{{ user_name }}"
+      command: /home/{{ user_name }}/.dotfiles/makesymlinks.sh

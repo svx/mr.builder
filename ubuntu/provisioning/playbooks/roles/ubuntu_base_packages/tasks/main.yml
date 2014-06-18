@@ -1,0 +1,11 @@
+---
+# This role installs all needed packages for a Ploneserver
+
+- name: Install all packages we need
+  apt: name={{item}} state=present
+  with_items:
+    - htop
+    - git
+    - vim
+    - aptitude
+

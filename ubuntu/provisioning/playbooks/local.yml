@@ -1,0 +1,16 @@
+---
+# Test Playbook
+
+### signal the start of configuration
+- hosts: localhost
+  tasks:
+    - irc:
+        channel="#plone.org" server="chat.freenode.net" msg="Building ISO!"
+
+- hosts: all
+  remote_user: plone
+  sudo: yes
+
+  roles:
+    - apt-update
+

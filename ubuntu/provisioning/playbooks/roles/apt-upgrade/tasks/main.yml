@@ -1,0 +1,5 @@
+---
+# This role will run apt-upgrade
+
+- name: Upgrade all Packages with apt-upgrade
+  apt: upgrade=safe

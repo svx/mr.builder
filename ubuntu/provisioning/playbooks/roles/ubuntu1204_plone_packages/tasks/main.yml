@@ -1,0 +1,32 @@
+---
+# This role installs all needed packages for a Ploneserver
+
+- name: Install all packages we need
+  apt: name={{item}} state=present
+  with_items:
+    - python-virtualenv
+    - build-essential
+    - libssl-dev
+    - libxml2-dev
+    - libxslt1-dev
+    - libbz2-dev
+    - zlib1g-dev
+    - python-setuptools
+    - python-dev
+    - libjpeg62-dev
+    - libreadline-gplv2-dev
+    - python-imaging
+    - wv
+    - poppler-utils
+    - python-psutil
+    - python-support
+    - subversion
+    - subversion-tools
+
+#- name: Download ZPS
+#  command: /usr/bin/wget -P /root http://www.apt.leftxs.org/stable/python-rt.zps_0.9.4-1_all.deb
+
+#- name: Install ZPS
+#  command: /usr/bin/dpkg -i /root/python-rt.zps_0.9.4-1_all.deb
+
+#Todo: remove not needed packages aka zps for example

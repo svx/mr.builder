@@ -1,0 +1,8 @@
+---
+# This role will download the Plone Unified Installer
+
+- name: Downloading the latest Plone UI
+  sudo: False
+  command: wget --no-check-certificate https://launchpad.net/plone/4.3/4.3.2/+download/Plone-4.3.2-UnifiedInstaller.tgz
+
+# todo: run action only once and check if it was working, 

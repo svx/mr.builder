@@ -1,0 +1,14 @@
+---
+########################################
+## Handlers for restarting services
+##
+
+- name: restart nginx
+  action: service name=nginx state=restarted
+  #action: #ADDHERETHEACTION
+
+- name: restart sshd
+  action: service name=sshd state=restarted
+
+- name: restart postfix
+  action: service name=postfix state=restarted

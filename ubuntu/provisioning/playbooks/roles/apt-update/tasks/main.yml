@@ -1,0 +1,5 @@
+---
+# This role will run apt-get update
+
+- name: Update Packages with apt-get update
+  apt: update_cache=yes

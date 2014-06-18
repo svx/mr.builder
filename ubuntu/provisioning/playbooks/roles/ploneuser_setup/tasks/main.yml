@@ -1,0 +1,38 @@
+---
+# This role will setup all dirs and script for the ploneuser
+
+#- name: Create User
+#  user: name={{ user_name }} shell=/bin/bash generate_ssh_key=yes ssh_key_bits=2048
+
+#- name: create ssh dir for User
+#  file: state=directory path=/home/{{ user_name }}/.ssh/ mode=700
+
+#- name: upload ssh keys for User
+#  action: authorized_key user={{ user_name }} key='$FILE(/home/svx/.ssh/id_rsa.pub)'
+
+- name: Create /bin dir in $HOME
+  file: state=directory path=/home/{{ user_name }}/bin
+
+- name: Create /sites dir in $HOME
+  file: state=directory path=/home/{{ user_name }}/sites
+
+- name: Download mkenv wrapper
+  command: /usr/bin/wget -P /home/{{ user_name }}/bin https://raw.github.com/svx/mkenv27/master/mkenv27.sh creates=/home/{{ user_name }}/bin/mkenv27.sh
+
+- name: Change permissions
+  command: /bin/chown {{ user_name }}:{{ user_name }} /home/{{ user_name }}/bin/mkenv27.sh
+
+- name: Make script exec.
+  command: /bin/chmod +x /home/{{ user_name }}/bin/mkenv27.sh
+
+- name: Install Vim
+  apt: name=vim state=present
+
+#- name: Upload vim.rc
+#  copy:
+
+#- name: Upload vim files
+#  copy:
+
+#- name: Upload bash_profile
+#  copy: src=../files/bash_profile dest=/home/{{ user_name }}/.bash_profile owner={{ user_name }} mode=0644

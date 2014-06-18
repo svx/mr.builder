@@ -1,0 +1,7 @@
+---
+# MOTD
+- name: Update MOTD
+  sudo: yes
+  template: src=motd.j2 dest=/etc/motd.tail mode=755
+
+#/etc/update-motd.d/95-ansible

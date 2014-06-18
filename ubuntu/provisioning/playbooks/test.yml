@@ -1,0 +1,22 @@
+---
+# Test Playbook
+
+### signal the start of configuration
+- hosts: localhost
+  tasks:
+    - irc:
+        channel="#milieudefensie" server="chat.freenode.net" msg="Preparing changes!"
+
+- hosts: testserver
+  remote_user: sven
+  sudo: yes
+  vars_files:
+    - ../host_vars/testserver.yml
+  roles:
+      - apt-update
+#   - ubuntu_packages
+#   - download_plone_installer
+#   - run_installer
+ handlers:
+    - include: ../handlers/handlers.yml
+

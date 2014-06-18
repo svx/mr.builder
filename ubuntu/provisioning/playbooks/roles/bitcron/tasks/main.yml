@@ -1,0 +1,15 @@
+---
+# This role will install bitcron
+
+- name: Add bitcon to /etc/apt/sources.list
+  apt_repository: repo='deb http://obit.bit.nl/ubuntu/trusty/bit-cron ./' state=present
+
+- name: Download and add bitcron key
+  apt_key: url=http://obit.bit.nl/ubuntu/obit.asc state=present
+
+- name: Update package list
+  apt: update_cache=yes
+
+- name: Install bitcron
+  apt: pkg=bit-cron state=present
+
