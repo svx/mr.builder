@@ -2,7 +2,7 @@
     "variables": {
         "ssh_name": "vagrant",
         "ssh_pass": "vagrant",
-        "hostname": "mrsjenkins"
+        "hostname": "docker-dev"
     },
 
     "provisioners": [{
@@ -10,6 +10,7 @@
         "scripts": [
             "scripts/base.sh",
             "scripts/vagrant.sh",
+            "scripts/docker.sh",
             "scripts/filesystem.sh",
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
@@ -24,7 +25,7 @@
     "builders": [{
         "type": "virtualbox-iso",
         "guest_os_type": "Debian_64",
-        "name": "debian_64.base",
+        "vm_name": "debian-base",
 
         "vboxmanage": [
             ["modifyvm", "{{.Name}}", "--memory", "512"],
@@ -44,7 +45,7 @@
         "ssh_password": "{{user `ssh_pass`}}",
         "ssh_wait_timeout": "20m",
 
-        "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -P now",
+        "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -hP now",
 
         "boot_command" : [
        	  "<esc><wait>",
@@ -66,7 +67,10 @@
     }],
     "post-processors": [{
         "type": "vagrant",
-        "compression_level": 1
+        "output": "debian_docker_base.box",
+        "keep_input_artifact": true,
+        "compression_level": 9
+
     }]
 }
 
