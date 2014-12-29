@@ -30,6 +30,6 @@ chown -R $VAGRANT_USER:$VAGRANT_USER $VAGRANT_HOME/.ssh
 echo 'Welcome to your Vagrant-built virtual machine.' > /var/run/motd
 
 # Install NFS client
-apt-get -y install nfs-common
+#apt-get -y install nfs-common
 
 
