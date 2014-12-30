@@ -13,7 +13,7 @@ apt-get install -y linux-image-amd64
 curl -sSL https://get.docker.com/ | sh
 
 # Add vagrant user to docker group
-gapsswd -a vagrant docker
+gpasswd -a vagrant docker
 
 # Add google to docker dns settings
 echo 'DOCKER_OPTS="--dns 8.8.8.8"' >> /etc/default/docker
