@@ -2,7 +2,7 @@
     "variables": {
         "ssh_name": "vagrant",
         "ssh_pass": "vagrant",
-        "hostname": "docker-base"
+        "hostname": "docker-dev"
     },
 
     "provisioners": [{
@@ -10,6 +10,7 @@
         "scripts": [
             "scripts/base.sh",
             "scripts/vagrant.sh",
+            "scripts/docker.sh",
             "scripts/filesystem.sh",
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
@@ -24,11 +25,11 @@
     "builders": [{
         "type": "virtualbox-iso",
         "guest_os_type": "Debian_64",
-        "vm_name": "debian-base",
+        "vm_name": "docker-dev",
 
         "vboxmanage": [
-            ["modifyvm", "{{.Name}}", "--memory", "512"],
-            ["modifyvm", "{{.Name}}", "--cpus", "1"]
+            ["modifyvm", "{{.Name}}", "--memory", "1024"],
+            ["modifyvm", "{{.Name}}", "--cpus", "2"]
         ],
 
         "disk_size" : 10000,
@@ -42,7 +43,7 @@
         "http_port_max" : 9001,
         "ssh_username": "{{user `ssh_name`}}",
         "ssh_password": "{{user `ssh_pass`}}",
-        "ssh_wait_timeout": "20m",
+        "ssh_wait_timeout": "40m",
 
         "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -hP now",
 
